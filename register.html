@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+        }
+
+        body {
+            background-color: #3b82f6; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .register-card {
+            background-color: #93c5fd;
+            width: 100%;
+            max-width: 440px;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Стиль для динамического вывода ошибок над полями */
+        .error-message {
+            background-color: #fca5a5;
+            color: #7f1d1d;
+            padding: 10px;
+            border-radius: 6px;
+            margin-bottom: 15px;
+            font-size: 14px;
+            text-align: center;
+            display: none; /* по умолчанию скрыта */
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            display: block;
+            color: #1e3a8a;
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 6px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #bfdbfe;
+            border-radius: 8px;
+            font-size: 15px;
+            background-color: white;
+            outline: none;
+        }
+
+        .form-group input:focus {
+            border-color: #2563eb;
+            box-shadow: 0 0 0 1px #2563eb;
+        }
+
+        .form-footer {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 20px;
+            margin-top: 24px;
+        }
+
+        .login-link {
+            color: #1d4ed8;
+            font-size: 14px;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        .btn-submit {
+            background-color: #1f2937;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 13px;
+            font-weight: bold;
+            text-transform: uppercase;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        .btn-submit:hover {
+            background-color: #111827;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="register-card">
+        <!-- Сюда JS будет выводить ошибку, если пароли не совпали или email занят -->
+        <div id="error-banner" class="error-message"></div>
+
+        <form id="registerForm">
+            <div class="form-group">
+                <label>ФИО</label>
+                <input type="text" id="reg-fio" required autofocus>
+            </div>
+
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" id="reg-email" required>
+            </div>
+
+            <div class="form-group">
+                <label>Пароль</label>
+                <input type="password" id="reg-password" required>
+            </div>
+
+            <div class="form-group">
+                <label>Повторите пароль</label>
+                <input type="password" id="reg-confirm" required>
+            </div>
+
+            <div class="form-footer">
+                <a class="login-link" href="auth.html">Зарегистрированы?</a>
+                <button type="submit" class="btn-submit">Регистрация</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- ПОДКЛЮЧЕНИЕ СВЯЗУЮЩИХ ФАЙЛОВ -->
+    <script src="db.js"></script>
+    <script src="register.js"></script>
+
+</body>
+</html>
